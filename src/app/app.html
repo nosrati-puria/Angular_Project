@@ -18,16 +18,16 @@
           <td>{{item.price}}</td>
           <td>{{item.count}}</td>
           <td>
-            <button type="button" (click)="plus(item)" class="btn btn-primary">+</button>
+            <button type="button" (click)="item.plus(item)" class="btn btn-primary">+</button>
             &nbsp;
-            <button type="button" (click)="minus(item)" class="btn btn-danger">-</button>
+            <button type="button" (click)="item.minus(item)" class="btn btn-danger">-</button>
           </td>
-          <td>{{getSubTotal(item)}}</td>
+          <td>{{item.getSubTotal(item)}}</td>
         </tr>
 
         <tr>
           <td colspan="5">Total Price:</td>
-          <td>{{getTotalPrice()}}</td>
+          <td>{{getTotal()}}</td>
         </tr>
       </tbody>
     </table>
