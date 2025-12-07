@@ -24,31 +24,11 @@ export class App {
 
   public items: Interfaces.Item[];
 
-  public plus(item: Interfaces.Item): void {
-    if (item.count < 10) {
-      item.count++;
-    }
-  }
-
-  public minus(item: Interfaces.Item): void {
-    if (item.count > 0) {
-      item.count--;
-    }
-  }
-
-  public getSubTotal(item: Interfaces.Item): number {
-    let result: number = item.price * item.count;
-    if (item.count >= 6) {
-      result *= 0.95;
-    }
-
-    return result;
-  }
-
-  public getTotalPrice(): number {
+  public getTotal(): number {
     let total: number = 0;
+    
     for (let item of this.items) {
-      total += this.getSubTotal(item);
+      total += item.getSubTotal(item);
     }
 
     return total;
